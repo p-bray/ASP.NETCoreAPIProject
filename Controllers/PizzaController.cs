@@ -2,6 +2,7 @@ using ContosoPizza.Models;
 using ContosoPizza.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using ContosoPizza.Services;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ContosoPizza.Controllers;
 
@@ -15,8 +16,10 @@ public class PizzaController : ControllerBase
     }   
 
     [HttpGet]
-    public ActionResult<List<Pizza>> GetAll() => 
-        PizzaService.GetAll();
+    public ActionResult<List<Pizza>> GetAll()
+    {
+        return PizzaService.GetAll();
+    } 
 
     [HttpGet("{id}")]    
     public ActionResult<Pizza>? Get(int id)
@@ -30,6 +33,10 @@ public class PizzaController : ControllerBase
     }
 
 
-
+    [HttpGet("count")]
+    public ActionResult<int> Count()
+    {
+        return PizzaService.GetAll().Count;
+    }
 
 }
