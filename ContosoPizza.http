@@ -3,7 +3,7 @@
 GET {{ContosoPizza_HostAddress}}/weatherforecast/
 Accept: application/json
 
-GET {{ContosoPizza_HostAddress}}/mytest/
+GET {{ContosoPizza_HostAddress}}/api/mytest/
 Accept: application/json
 
 ###

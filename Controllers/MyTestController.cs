@@ -1,9 +1,11 @@
+using ContosoPizza.Models;
+using ContosoPizza.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoPizza.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class MyTestController : ControllerBase
 {
 
@@ -13,10 +15,21 @@ public class MyTestController : ControllerBase
     }
 
     [HttpGet(Name = "GetMyTest")]
-    public string Get()
+    public string[] Get()
     {
+        string[] results = new string[0];
 
-
-        return "testing my controller out";
+        foreach(Pizza pizza in PizzaService.GetAll())
+        {
+            //put the addditioan here once you figure fucking arrays out. too tired
+            results.
+        }
+        return results;
     }
-}
+
+    // public string Get()
+    // {
+        
+    //     return "hehe";
+    // }
+}   
