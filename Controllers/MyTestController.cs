@@ -22,7 +22,7 @@ public class MyTestController : ControllerBase
         foreach(Pizza pizza in PizzaService.GetAll())
         {
             //put the addditioan here once you figure fucking arrays out. too tired
-            results.
+            
         }
         return results;
     }
