@@ -39,4 +39,23 @@ public class PizzaController : ControllerBase
         return PizzaService.GetAll().Count;
     }
 
+    [HttpPost]
+    public IActionResult Create(Pizza pizza)
+    {
+        PizzaService.Add(pizza);
+
+        return CreatedAtAction(nameof(Get), new {id = pizza.Id}, pizza);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Pizza pizza)
+    {
+
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+
+    }
 }
